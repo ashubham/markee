@@ -1,6 +1,6 @@
 {
   "name": "mark-selection",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Mobile like text selection, anywhere.",
   "main": "dist/selection-marker.js",
   "typings": "build/index.d.ts",

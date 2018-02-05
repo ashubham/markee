@@ -1,4 +1,4 @@
-export interface SelectionMarkerConfig {
+export interface MarkSelectionConfig {
     initialText: string;
     startIdx: number;
     endIdx: number;

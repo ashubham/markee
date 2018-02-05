@@ -1,4 +1,4 @@
-import { SelectionMarkerConfig } from "./selection-marker-config";
+import { MarkSelectionConfig } from "./selection-marker-config";
 
 let defaultConfig = {
     initialText: 'I am a sample text, you can highlight me!',
@@ -12,12 +12,12 @@ let defaultConfig = {
     draggedClass : 'dragged'
 }
 
-export class SelectionMarker {
+export class MarkSelection {
     private begin: Marker;
     private end: Marker;
     private dragged: Marker;
     constructor(private el: HTMLElement, 
-        private config: SelectionMarkerConfig) {
+        private config: MarkSelectionConfig) {
         this.config = Object.assign({}, defaultConfig, this.config);
         this.createTokens();
         this.initContainer();

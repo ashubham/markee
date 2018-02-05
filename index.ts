@@ -1,2 +1,2 @@
-export {SelectionMarker} from './src/index';
-export {SelectionMarkerConfig} from './src/selection-marker-config';
+export {MarkSelection as default} from './src/index';
+export {MarkSelectionConfig} from './src/selection-marker-config';
