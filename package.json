@@ -3,6 +3,7 @@
   "version": "0.3.5",
   "description": "Mobile like text selection, anywhere.",
   "main": "dist/selection-marker.js",
+  "typings": "build/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
     "dist": "npm run build && webpack --config=webpack.config.js",
