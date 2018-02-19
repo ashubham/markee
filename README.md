@@ -1,2 +1,3 @@
-# mark-selection
-Mobile like text selection, anywhere.
+# Markee
+
+Visual text selection.

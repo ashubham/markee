@@ -1,8 +1,8 @@
 {
-  "name": "mark-selection",
+  "name": "markee",
   "version": "0.3.6",
-  "description": "Mobile like text selection, anywhere.",
-  "main": "dist/selection-marker.js",
+  "description": "Visual markers for selected text",
+  "main": "dist/markee.js",
   "typings": "build/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashubham/mark-selection.git"
+    "url": "git+https://github.com/ashubham/markee.git"
   },
   "keywords": [
     "selection",
@@ -23,9 +23,9 @@
   "author": "ashubham@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ashubham/mark-selection/issues"
+    "url": "https://github.com/ashubham/markee/issues"
   },
-  "homepage": "https://github.com/ashubham/mark-selection#readme",
+  "homepage": "https://github.com/ashubham/markee#readme",
   "devDependencies": {
     "typescript": "^2.7.1",
     "uglifyjs-webpack-plugin": "^1.1.8",

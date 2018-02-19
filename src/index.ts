@@ -1,4 +1,4 @@
-import { MarkSelectionConfig } from "./selection-marker-config";
+import { MarkeeConfig } from "./selection-marker-config";
 
 let defaultConfig = {
     initialText: 'I am a sample text, you can highlight me!',
@@ -12,16 +12,17 @@ let defaultConfig = {
     draggedClass : 'dragged'
 }
 
-export class MarkSelection {
+export class Markee {
     private begin: Marker;
     private end: Marker;
     private dragged: Marker;
     constructor(private el: HTMLElement, 
-        private config: MarkSelectionConfig) {
+        private config: MarkeeConfig) {
         this.config = Object.assign({}, defaultConfig, this.config);
         this.createTokens();
         this.initContainer();
         this.initDragEvents();
+        this.initClickEvents();
     }
 
     private initContainer() {
@@ -74,6 +75,20 @@ export class MarkSelection {
         })
     }
 
+    private initClickEvents() {
+        this.el.addEventListener('dblclick', (evt) => {
+            let target: any = evt.target;
+            if(this.isToken(target)) {
+                let order = Number.parseInt(target.dataset.order);
+                this.begin.order = order - 1;
+                this.begin.node.style.order = '' + this.begin.order;
+                this.end.order = order + 1;
+                this.end.node.style.order = '' + this.end.order;
+                this.updateSelectedChildren();
+            }
+        });
+    }
+
     private isToken(target): boolean {
         return target.classList.contains(this.config.tokenClass);
     }
@@ -81,9 +96,13 @@ export class MarkSelection {
     private updateSelection(dragged: Marker, order: number, target: HTMLElement) {
         dragged.node.style.order = '' + order;
         dragged.order = order;
+        this.updateSelectedChildren();
+    }
+
+    private updateSelectedChildren() {
+        let selectedText = '';
         let startIdx = this.begin.order / 2;
         let endIdx = this.end.order / 2;
-        let selectedText = '';
         Array.from(this.el.children).forEach((child, idx) => {
             if(idx >= startIdx && idx < endIdx) {
                 child.classList.add(this.config.selectedClass);

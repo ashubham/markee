@@ -1,0 +1,38 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 600px;
+	border: 1px solid black;
+	padding: 5px;
+	font-size: 16px;
+	user-select: none;
+}
+
+.token {
+	padding: 5px;
+	border: 2px solid transparent;
+	border-left: none;
+	border-right: none;
+	transition: all ease-out 0.1s;
+}
+
+.selected {
+	border: 2px solid green;
+	background-color: lightgreen;
+	transition: all ease-in 0.2s;
+	border-left: none;
+	border-right: none;
+}
+
+.marker {
+	width: 6px;
+	height: 32px;
+	margin: 0 5px;
+	background: grey;
+	cursor: col-resize;
+}
+
+.dragged {
+	background-color: red;
+}

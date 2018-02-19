@@ -4,9 +4,9 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
     entry: './build/index.js',
     output: {
-        filename: 'selection-marker.js',
+        filename: 'markee.js',
         path: path.resolve(__dirname, 'dist'),
-        library: 'SelectionMarker'
+        library: 'Markee'
     },
     plugins: [
         new UglifyJSPlugin()
