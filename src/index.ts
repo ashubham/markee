@@ -23,6 +23,7 @@ export class Markee {
         this.initContainer();
         this.initDragEvents();
         this.initClickEvents();
+        this.updateSelectedChildren();
     }
 
     private initContainer() {
@@ -52,6 +53,8 @@ export class Markee {
             let target: HTMLElement = <HTMLElement>e.target;
             if(target.classList.contains(this.config.markerClass)) {
                 this.dragged = (target.id === this.config.beginClass) ? this.begin : this.end;
+                // Just to keep Firefox happy.
+                e.dataTransfer.setData('Text', 'random');
                 setTimeout(() => target.classList.add(this.config.draggedClass));
             }
         });
