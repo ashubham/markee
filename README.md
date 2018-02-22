@@ -12,6 +12,7 @@
 - Lightweight
 - Typescript (Types included).
 - Fully customizable using CSS.
+- Works in Chrome, Safari, IE, Firefox.
 
 ## Simple usage
 ```html
