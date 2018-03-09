@@ -11,4 +11,5 @@ export interface MarkeeConfig {
     onMarked: (text: string,
         startIdx: number,
         endIdx: number) => void;
+    onDrag?: (dragEl) => void;
 }

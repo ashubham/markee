@@ -9,7 +9,8 @@ let defaultConfig = {
     beginClass : 'begin',
     endClass : 'end',
     selectedClass : 'selected',
-    draggedClass : 'dragged'
+    draggedClass : 'dragged',
+    onDrag: (e) => {}
 }
 
 export class Markee {
@@ -75,6 +76,11 @@ export class Markee {
             let target: any = e.target;
             target.classList.remove(this.config.draggedClass);
             this.dragged = null;
+        });
+
+        this.el.addEventListener('drag', (e) => {
+            let target = e.target;
+            this.config.onDrag(target);
         })
     }
 

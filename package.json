@@ -1,6 +1,6 @@
 {
   "name": "markee",
-  "version": "0.3.12",
+  "version": "0.3.14",
   "description": "Visual markers for selected text",
   "main": "dist/markee.js",
   "typings": "build/index.d.ts",
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/ashubham/markee#readme",
   "devDependencies": {
     "typescript": "^2.7.1",
-    "uglifyjs-webpack-plugin": "^1.1.8",
+    "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^3.10.0"
   }
 }
