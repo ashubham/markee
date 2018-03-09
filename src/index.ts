@@ -79,8 +79,7 @@ export class Markee {
         });
 
         this.el.addEventListener('drag', (e) => {
-            let target = e.target;
-            this.config.onDrag(target);
+            this.config.onDrag(this.begin.node, this.end.node);
         })
     }
 

@@ -44,7 +44,8 @@ let markee = new Markee(el, {
         startIdx: number,     // index of the start.
         endIdx: number),      // index of the end.
     
-    onDrag: (dragEl: HTMLElement), // Called when a handle is dragged.
+    onDrag: (beginMarker: HTMLElement,
+             endMarker: HTMLElement), // Called when a handle is dragged.
     
     markerClass: 'marker',      // CSS class for drag handle.
     tokenClass: 'token',        // CSS class for text token.
