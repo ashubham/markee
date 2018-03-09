@@ -10,7 +10,7 @@ export interface MarkeeConfig {
     draggedClass?: string;
     onMarked: (text: string,
         startIdx: number,
-        endIdx: number) => void;
-    onDrag?: (begin: HTMLElement, 
-              end: HTMLElement) => void;
+        endIdx: number,
+        begin?: HTMLElement,
+        end?: HTMLElement) => void;
 }

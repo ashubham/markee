@@ -9,8 +9,7 @@ let defaultConfig = {
     beginClass : 'begin',
     endClass : 'end',
     selectedClass : 'selected',
-    draggedClass : 'dragged',
-    onDrag: (e) => {}
+    draggedClass : 'dragged'
 }
 
 export class Markee {
@@ -77,14 +76,10 @@ export class Markee {
             target.classList.remove(this.config.draggedClass);
             this.dragged = null;
         });
-
-        this.el.addEventListener('drag', (e) => {
-            this.config.onDrag(this.begin.node, this.end.node);
-        })
     }
 
     private initClickEvents() {
-        this.el.addEventListener('dblclick', (evt) => {
+        this.el.addEventListener('click', (evt) => {
             let target: any = evt.target;
             if(this.isToken(target)) {
                 let order = Number.parseInt(target.dataset.order);
@@ -119,7 +114,10 @@ export class Markee {
                 child.classList.remove(this.config.selectedClass);
             }
         });
-        this.config.onMarked(selectedText, startIdx, endIdx - 1);
+        this.config.onMarked(
+            selectedText, startIdx, endIdx - 1,
+            this.begin.node, this.end.node
+        );
     }
 
     private createMarker (isBegin: boolean = false, order: number) {
