@@ -9,7 +9,8 @@ let defaultConfig = {
     beginClass : 'begin',
     endClass : 'end',
     selectedClass : 'selected',
-    draggedClass : 'dragged'
+    draggedClass : 'dragged',
+    hideDragGhost: false
 }
 
 export class Markee {
@@ -53,9 +54,17 @@ export class Markee {
             let target: HTMLElement = <HTMLElement>e.target;
             if(target.classList.contains(this.config.markerClass)) {
                 this.dragged = (target.id === this.config.beginClass) ? this.begin : this.end;
+                if(this.config.hideDragGhost) {
+                    target.style.opacity = '0';
+                    e.dataTransfer.setDragImage(target, 0, 0);
+                }
                 // Just to keep Firefox happy.
                 e.dataTransfer.setData('Text', 'random');
-                setTimeout(() => target.classList.add(this.config.draggedClass));
+                e.dataTransfer.setData("text/plain", target.id);
+                setTimeout(() => {
+                    target.style.opacity = '1';
+                    target.classList.add(this.config.draggedClass)
+                });
             }
         });
 

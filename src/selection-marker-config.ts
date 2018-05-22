@@ -8,6 +8,7 @@ export interface MarkeeConfig {
     endClass?: string;
     selectedClass?: string;
     draggedClass?: string;
+    hideDragGhost?: boolean;
     onMarked: (text: string,
         startIdx: number,
         endIdx: number,

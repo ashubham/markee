@@ -1,6 +1,6 @@
 {
   "name": "markee",
-  "version": "0.4.2",
+  "version": "0.4.4",
   "description": "Visual markers for selected text",
   "main": "dist/markee.js",
   "typings": "build/index.d.ts",
