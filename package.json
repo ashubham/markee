@@ -1,12 +1,13 @@
 {
   "name": "markee",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "Visual markers for selected text",
   "main": "dist/markee.js",
+  "module": "build/index.js",
   "typings": "build/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
-    "dist": "npm run build && webpack --config=webpack.config.js",
+    "dist": "npm run build && rollup -c rollup.config.js",
     "test": "npm run build",
     "prepublish": "npm run dist"
   },
@@ -27,8 +28,8 @@
   },
   "homepage": "https://github.com/ashubham/markee#readme",
   "devDependencies": {
-    "typescript": "^2.7.1",
-    "uglifyjs-webpack-plugin": "^1.2.2",
-    "webpack": "^3.10.0"
+    "rollup": "^1.1.2",
+    "rollup-plugin-terser": "^4.0.4",
+    "typescript": "^2.7.1"
   }
 }
